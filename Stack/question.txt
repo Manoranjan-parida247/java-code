@@ -1,0 +1,43 @@
+question - 1
+//Insert an Element at the Bottom of a Stack
+answer -->
+class Solution {
+    public Stack<Integer> insertAtBottom(Stack<Integer> st, int x) {
+        if(st.isEmpty())
+        {
+            st.push(x);
+            return st;
+        }
+        
+        int top = st.pop();
+        insertAtBottom(st, x);
+        st.push(top);
+        return st;
+    }
+}
+
+
+question - 1
+//Reverse a string using Stack
+answer -->
+public class Solution {	
+	public static String reverseString(String str) {
+		// Write your code here.
+		//solution - 2;//using stack
+		Stack<Character> st = new Stack<>();
+		int i = 0;
+		while(i < str.length())
+		{
+			st.push(str.charAt(i));
+			i++;
+		}
+
+		StringBuilder result = new StringBuilder("");
+		while(!st.isEmpty())
+		{
+			char ch = st.pop();
+			result.append(ch);
+		}
+		return result.toString();
+	}
+}
